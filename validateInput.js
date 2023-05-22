@@ -1,11 +1,11 @@
-function validateInput(fName, errorMessage) {
+function validateInput(input, errorMessage) {
 
-    if(!fName.value) {
-        fName.classList.add("is-invalid");
+    if(!input.value) {
+        input.classList.add("is-invalid");
         errorMessage.classList.add("invalid-feedback");
         return false;
     } else {
-        fName.classList.replace("is-invalid", "is-valid");
+        input.classList.replace("is-invalid", "is-valid");
         return true;
     } 
 }
