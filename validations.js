@@ -1,4 +1,6 @@
 import validateInput from "./validateInput.js";
+import validateSelect from "./validateSelect.js";
+import validateCheckBox from "./validateCheckBox.js";
 
 const validations = (e) => {
     e.preventDefault();
@@ -36,6 +38,17 @@ const validations = (e) => {
         errorMessageAddress.textContent = "Please enter a valid address.";
     }
 
+    //Validation for select
+    const country = document.querySelector("#country");
+    const errorMessageSelect = country.nextElementSibling;
+    validateSelect(country, errorMessageSelect);
+
+    //Validation for select
+    const state = document.querySelector("#state");
+    state.nextElementSibling.setAttribute("display", "block");
+    const errorMessageState = state.nextElementSibling;
+    validateSelect(state, errorMessageState);
+
     //Validation for zip code
     const zip = document.querySelector("#zip");
     const errorMessageZip = zip.nextElementSibling;
@@ -45,6 +58,15 @@ const validations = (e) => {
     const nameCard = document.querySelector("#cc-name");
     const errorMessageNameCard = nameCard.nextElementSibling;
     validateInput(nameCard, errorMessageNameCard);
+
+    //Validation for nane on card
+    const checkBox = document.querySelector("#same-address");
+    const errorMessageCheckBox = checkBox.nextElementSibling;
+
+    //Validation for nane on card
+    const checkBox2 = document.querySelector("#same-address");
+    const errorMessageCheckBox2 = checkBox2.nextElementSibling;
+    validateCheckBox(checkBox, checkBox2, errorMessageCheckBox2);
 
     //Validation for credit card number
     const numberCard = document.querySelector("#cc-number");
