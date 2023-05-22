@@ -2,10 +2,10 @@ function validateInput(fName, errorMessage) {
 
     if(!fName.value) {
         fName.classList.add("is-invalid");
-        errorMessage.classList.replace("invalid-feedback", "text-danger");
+        errorMessage.classList.add("invalid-feedback");
         return false;
     } else {
-        errorMessage.classList.replace("text-danger", "invalid-feedback");
+        fName.classList.replace("is-invalid", "is-valid");
         return true;
     } 
 }
